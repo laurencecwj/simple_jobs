@@ -10,7 +10,8 @@ resources:
     image_id: projects/ml-images/global/images/c2-deeplearning-pytorch-2-4-cu124-v20250310-debian-11
 setup: |
     docker pull rust:slim-bullseye
-run: |
     git clone https://github.com/laurencecwj/simple_jobs.git 
+run: |
+    cd simple_jobs && git pull origin main
     bash simple_jobs/run.sh $(SKYPILOT_TASK_ID)
 
