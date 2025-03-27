@@ -9,5 +9,5 @@ setup: |
   docker pull rust:slim-bullseye
   git clone https://github.com/laurencecwj/simple_jobs.git 
 run: |
-  bash run.sh $(SKYPILOT_TASK_ID)
+  bash simple_jobs/run.sh $(SKYPILOT_TASK_ID)
 

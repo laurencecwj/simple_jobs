@@ -2,4 +2,9 @@
 
 ID=$1
 
-docker run --rm -it -v simple_jobs:/workspace/simple_jobs rust:slim-bullseye bash /workspace/simple_jobs/local.sh $ID
+BASEDIR=`dirname $0`
+OLDPATH=`pwd`
+cd $BASEDIR
+WORKDIR=`pwd`
+
+docker run --rm -it -v $WORKDIR:/workspace/simple_jobs rust:slim-bullseye bash /workspace/simple_jobs/local.sh $ID
