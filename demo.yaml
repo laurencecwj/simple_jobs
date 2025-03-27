@@ -1,5 +1,5 @@
 name: demo
-num_nodes: 1
+num_nodes: 2
 resources:
     cloud: gcp
     # accelerators: A100:1
