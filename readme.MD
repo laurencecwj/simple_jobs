@@ -1,7 +1,11 @@
 
 ## 注意：
 
-要enable skypilot[gcp]:
+1. 要enable skypilot[gcp]:
+
+pip install skypilot[gcp]
+
+2. 要授权给本机(gcp的vm instance)
 
 gcloud auth application-default login
 
