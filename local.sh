@@ -9,6 +9,6 @@ cd $BASEDIR
 WORKDIR=`pwd`
 
 cargo build --release
-target/release/simple_jobs --id $ID --ourdir /workspace/simple_jobs/output.txt
+target/release/simple_jobs --id $ID --outdir /workspace/simple_jobs/output.txt
 
 cd $OLDPATH
