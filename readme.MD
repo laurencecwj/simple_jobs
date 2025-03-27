@@ -1,8 +1,8 @@
-## for skypilot testing
 
-## usage: simple_jobs --id 1
+## 注意：
 
-## enable skypilot[gcp]:
+要enable skypilot[gcp]:
+
 gcloud auth application-default login
 
 
