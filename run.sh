@@ -7,4 +7,4 @@ WORKDIR=`pwd`
 
 ID=`cat $WORKDIR/node.id`
 echo "current node: "$ID
-docker run --rm -it -v $WORKDIR:/workspace/simple_jobs rust:slim-bullseye bash /workspace/simple_jobs/local.sh $ID
+docker run --rm -v $WORKDIR:/workspace/simple_jobs rust:slim-bullseye bash /workspace/simple_jobs/local.sh $ID
