@@ -1,7 +1,5 @@
 #!/bin/bash
 
-ID=$1
-
 BASEDIR=`dirname $0`
 OLDPATH=`pwd`
 cd $BASEDIR

@@ -13,5 +13,5 @@ setup: |
     git clone https://github.com/laurencecwj/simple_jobs.git 
 run: |
     cd simple_jobs && git pull origin main ; cd -
-    bash simple_jobs/run.sh $((SKYPILOT_TASK_ID))
-
+    bash simple_jobs/run.sh 
+    
