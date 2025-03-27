@@ -4,3 +4,6 @@
 
 ## enable skypilot[gcp]:
 gcloud auth application-default login
+
+
+### 使用过程
