@@ -1,6 +1,7 @@
 #!/bin/bash
 
 ID=$1
+echo "START JOB: "$ID
 
 BASEDIR=`dirname $0`
 OLDPATH=`pwd`
