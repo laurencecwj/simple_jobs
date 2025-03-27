@@ -1,5 +1,5 @@
 resources:
-  instances: 1
+  num_nodes: 1
   cloud: gcp
   # accelerators: A100:1
   instance_type: e2-highmem-2 
