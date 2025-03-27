@@ -1,4 +1,5 @@
 use clap::Parser;
+use std::env;
 
 #[derive(Parser, Debug)]
 pub struct Args {
@@ -14,6 +15,7 @@ const DATA:&[u8] = include_bytes!("data.txt");
 fn main() -> anyhow::Result<()>{
     let args: Args = Args::parse();
     let myid = args.id;
+    let partid = env::var("PARTITION")?;
 
     let lines = String::from_utf8(DATA.to_vec())?;
     // println!("debug data: {:?}", lines);
@@ -28,7 +30,9 @@ fn main() -> anyhow::Result<()>{
     println!("current working directory: {}", workdir.to_str().unwrap());
     let p = std::path::Path::new(&args.outdir).join("output.txt");
     println!("write output to {}", p.to_str().unwrap());
-    std::fs::write(p, data[myid])?;
+    let s = format!("partition id: {}", partid);
+    let s = vec![data[myid], &s];
+    std::fs::write(p,  s.join("\n"))?;
 
     Ok(())
 }
