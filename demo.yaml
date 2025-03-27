@@ -11,7 +11,8 @@ resources:
 setup: |
     docker pull rust:slim-bullseye
     git clone https://github.com/laurencecwj/simple_jobs.git 
+    echo "${SKYPILOT_SETUP_NODE_RANK}" > ~/node.id
 run: |
     cd simple_jobs && git pull origin main ; cd -
-    bash simple_jobs/run.sh 
-    
+    bash simple_jobs/run.sh `cat ~/node.id`
+
