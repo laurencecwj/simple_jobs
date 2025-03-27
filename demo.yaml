@@ -14,4 +14,4 @@ setup: |
     echo "${SKYPILOT_SETUP_NODE_RANK}" > simple_jobs/node.id
 run: |
     cd simple_jobs && git pull origin main ; cd -
-    bash simple_jobs/run.sh `cat ~/node.id`
+    bash simple_jobs/run.sh
