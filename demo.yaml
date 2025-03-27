@@ -6,7 +6,7 @@ resources:
     instance_type: e2-highmem-2 
     region: asia-east2
     use_spot: true
-    spot_recovery: FAILOVER
+    job_recovery: FAILOVER
     image_id: projects/ml-images/global/images/c2-deeplearning-pytorch-2-4-cu124-v20250310-debian-11
 setup: |
     docker pull rust:slim-bullseye
