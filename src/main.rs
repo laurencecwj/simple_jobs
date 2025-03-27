@@ -21,5 +21,7 @@ fn main() -> anyhow::Result<()>{
     }
     println!("{}", data[myid]);
 
+    std::fs::write("./output.txt", data[myid])?;
+
     Ok(())
 }
