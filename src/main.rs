@@ -27,6 +27,7 @@ fn main() -> anyhow::Result<()>{
     let workdir = std::env::current_dir()?;
     println!("current working directory: {}", workdir.to_str().unwrap());
     let p = std::path::Path::new(&args.outdir).join("output.txt");
+    println!("write output to {}", p.to_str().unwrap());
     std::fs::write(p, data[myid])?;
 
     Ok(())
