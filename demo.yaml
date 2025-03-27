@@ -1,13 +1,16 @@
+name: demo
+num_nodes: 1
 resources:
-  num_nodes: 1
-  cloud: gcp
-  # accelerators: A100:1
-  instance_type: e2-highmem-2 
-  region: asia-east2
-  image_id: projects/ml-images/global/images/c2-deeplearning-pytorch-2-4-cu124-v20250310-debian-11
+    cloud: gcp
+    # accelerators: A100:1
+    instance_type: e2-highmem-2 
+    region: asia-east2
+    use_spot: true
+    spot_recovery: FAILOVER
+    image_id: projects/ml-images/global/images/c2-deeplearning-pytorch-2-4-cu124-v20250310-debian-11
 setup: |
-  docker pull rust:slim-bullseye
-  git clone https://github.com/laurencecwj/simple_jobs.git 
+    docker pull rust:slim-bullseye
+    git clone https://github.com/laurencecwj/simple_jobs.git 
 run: |
-  bash simple_jobs/run.sh $(SKYPILOT_TASK_ID)
+    bash simple_jobs/run.sh $(SKYPILOT_TASK_ID)
 
