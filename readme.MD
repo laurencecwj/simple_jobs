@@ -49,8 +49,18 @@ Cluster name: sky-758d-laurence
 
 └── To teardown the cluster:    sky down sky-758d-laurence
 
-2. sky exec sky-758d-laurence demo.yaml
+2. sky exec sky-758d-laurence demo.yaml --env PARTITION="foobar2005"
 
 其中的sky-758d-laurence就是刚才新建的cluster name
 
 还可以用sky status查看所有的cluster names
+
+注意：
+
+PARTITION="foobar2005"将作为环境变量，在demo.yaml的run区域的bash simple_jobs/run.sh中生效；最终可以在结点上的output.txt中看到
+
+cat output.txt 
+
+hello, world! from job 1
+
+partition id: foobar2005
