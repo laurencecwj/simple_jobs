@@ -4,6 +4,9 @@ use clap::Parser;
 pub struct Args {
     #[arg(long, value_enum, value_name = "ID", help = "job id",)]
     id: usize,
+
+    #[arg(long, value_enum, value_name = "OUTDIR", help = "write output to directory",)]
+    outdir: String,
 }
 
 const DATA:&[u8] = include_bytes!("data.txt");
@@ -21,7 +24,8 @@ fn main() -> anyhow::Result<()>{
     }
     println!("{}", data[myid]);
 
-    std::fs::write("./output.txt", data[myid])?;
+    let p = std::path::Path::new(&args.outdir).join("output.txt");
+    std::fs::write(p, data[myid])?;
 
     Ok(())
 }
